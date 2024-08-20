@@ -1,7 +1,7 @@
 IMAGE_NAME = "aggregator:latest"
 SERVICE_NAME = "aligned-aggregator"
 
-ENTRYPOINT_ARGS = ["/aggregator"]
+ENTRYPOINT_ARGS = ["/bin/aggregator"]
 
 # The min/max CPU/memory that aligned-aggregator can use
 MIN_CPU = 100
@@ -25,6 +25,7 @@ def launch_aggregator(
     plan.add_service(SERVICE_NAME, config)
 
 
+# TODO: add -config $(AGG_CONFIG_FILE)
 def get_config(
     prefunded_addresses,
     el_uri,
