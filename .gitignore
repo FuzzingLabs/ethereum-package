@@ -3,6 +3,7 @@
 *.iws
 *.iml
 *.ipr
+.kube
 
 # VS Code
 *.vscode
