@@ -1,7 +1,7 @@
 # Important recent update notes - temporary note
 The `ethereum-package` has been moved to the [ethpandaops organization](https://github.com/ethpandaops/).
 
-The new repository is located at [github.com/ethpandaops/ethereum-package](https://github.com/ethpandaops/ethereum-package). For all your references please replace `kurtosis-tech` with `ethpandaops`.
+The new repository is located at [github.com/FuzzingLabs/ethereum-package](https://github.com/FuzzingLabs/ethereum-package). For all your references please replace `kurtosis-tech` with `ethpandaops`.
 
 If you would like to use the latest release of the package, released by kurtosis-tech, please refer to using the tag [v3.1.0](https://github.com/kurtosis-tech/ethereum-package/releases/tag/3.1.0).
 
@@ -34,14 +34,14 @@ Optional features (enabled via flags or parameter files at runtime):
 
 ## Quickstart
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/new/?editor=code#https://github.com/ethpandaops/ethereum-package)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/new/?editor=code#https://github.com/FuzzingLabs/ethereum-package)
 
 1. [Install Docker & start the Docker Daemon if you haven't done so already][docker-installation]
 2. [Install the Kurtosis CLI, or upgrade it to the latest version if it's already installed][kurtosis-cli-installation]
 3. Run the package with default configurations from the command line:
 
    ```bash
-   kurtosis run --enclave my-testnet github.com/ethpandaops/ethereum-package
+   kurtosis run --enclave my-testnet github.com/FuzzingLabs/ethereum-package
    ```
 
 #### Run with your own configuration
@@ -49,7 +49,7 @@ Optional features (enabled via flags or parameter files at runtime):
 Kurtosis packages are parameterizable, meaning you can customize your network and its behavior to suit your needs by storing parameters in a file that you can pass in at runtime like so:
 
 ```bash
-kurtosis run --enclave my-testnet github.com/ethpandaops/ethereum-package --args-file network_params.yaml
+kurtosis run --enclave my-testnet github.com/FuzzingLabs/ethereum-package --args-file network_params.yaml
 ```
 
 Where `network_params.yaml` contains the parameters for your network in your home directory.
@@ -976,7 +976,7 @@ Consensus Layer (CL) nodes - Validator:
 To spin up the network of Ethereum nodes with an external block building network (using Flashbot's `mev-boost` protocol), simply use:
 
 ```
-kurtosis run github.com/ethpandaops/ethereum-package '{"mev_type": "full"}'
+kurtosis run github.com/FuzzingLabs/ethereum-package '{"mev_type": "full"}'
 ```
 
 Starting your network up with `"mev_type": "full"` will instantiate and connect the following infrastructure to your network:
@@ -1006,7 +1006,7 @@ For more details, including a guide and architecture of the `mev-boost` infrastr
 
 ## Pre-funded accounts at Genesis
 
-This package comes with [21 prefunded keys for testing](https://github.com/ethpandaops/ethereum-package/blob/main/src/prelaunch_data_generator/genesis_constants/genesis_constants.star).
+This package comes with [21 prefunded keys for testing](https://github.com/FuzzingLabs/ethereum-package/blob/main/src/prelaunch_data_generator/genesis_constants/genesis_constants.star).
 
 Here's a table of where the keys are used
 
@@ -1046,7 +1046,7 @@ To get detailed information about the structure of the package, visit [the archi
 When you're happy with your changes:
 
 1. Create a PR
-1. Add one of the maintainers of the repo as a "Review Request":
+2. Add one of the maintainers of the repo as a "Review Request":
    * `parithosh` (Ethereum Foundation)
    * `barnabasbusa` (Ethereum Foundation)
    * `pk910` (Ethereum Foundation)
@@ -1054,7 +1054,7 @@ When you're happy with your changes:
    * `h4ck3rk3y` (Kurtosis)
    * `mieubrisse` (Kurtosis)
    * `leederek` (Kurtosis)
-1. Once everything works, merge!
+3. Once everything works, merge!
 
 <!------------------------ Only links below here -------------------------------->
 

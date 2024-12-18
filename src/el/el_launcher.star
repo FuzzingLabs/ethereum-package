@@ -3,6 +3,7 @@ input_parser = import_module("../package_io/input_parser.star")
 shared_utils = import_module("../shared_utils/shared_utils.star")
 
 geth = import_module("./geth/geth_launcher.star")
+story_geth = import_module("./story-geth/story_geth_launcher.star")
 besu = import_module("./besu/besu_launcher.star")
 erigon = import_module("./erigon/erigon_launcher.star")
 nethermind = import_module("./nethermind/nethermind_launcher.star")
@@ -45,6 +46,16 @@ def launch(
                 el_cl_data.prague_time,
             ),
             "launch_method": geth.launch,
+        },
+        constants.EL_TYPE.story_geth: {
+            "launcher": story_geth.new_geth_launcher(
+                el_cl_data,
+                jwt_file,
+                network_params.network,
+                network_id,
+                el_cl_data.prague_time,
+            ),
+            "launch_method": story_geth.launch,
         },
         constants.EL_TYPE.besu: {
             "launcher": besu.new_besu_launcher(

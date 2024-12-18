@@ -1,3 +1,4 @@
+story_cl = import_module("./story-cl/story_cl_launcher.star")
 lighthouse = import_module("./lighthouse/lighthouse_launcher.star")
 lodestar = import_module("./lodestar/lodestar_launcher.star")
 nimbus = import_module("./nimbus/nimbus_launcher.star")
@@ -37,6 +38,12 @@ def launch(
     plan.print("Launching CL network")
 
     cl_launchers = {
+        constants.CL_TYPE.story_cl: {
+            "launcher": story_cl.new_story_cl_launcher(
+                el_cl_data, jwt_file, network_params
+            ),
+            "launch_method": story_cl.launch,
+        },
         constants.CL_TYPE.lighthouse: {
             "launcher": lighthouse.new_lighthouse_launcher(
                 el_cl_data, jwt_file, network_params

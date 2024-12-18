@@ -1,4 +1,5 @@
 EL_TYPE = struct(
+    story_geth="story-geth",
     geth_builder="geth-builder",
     geth="geth",
     erigon="erigon",
@@ -11,6 +12,7 @@ EL_TYPE = struct(
 )
 
 CL_TYPE = struct(
+    story_cl="story-cl",
     lighthouse="lighthouse",
     teku="teku",
     nimbus="nimbus",
@@ -20,11 +22,13 @@ CL_TYPE = struct(
 )
 
 VC_TYPE = struct(
+    story_cl="story-cl",
     lighthouse="lighthouse",
     lodestar="lodestar",
     nimbus="nimbus",
     prysm="prysm",
     teku="teku",
+    grandine="grandine",
 )
 
 GLOBAL_LOG_LEVEL = struct(

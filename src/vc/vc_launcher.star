@@ -3,6 +3,7 @@ constants = import_module("../package_io/constants.star")
 node_metrics = import_module("../node_metrics_info.star")
 vc_context = import_module("./vc_context.star")
 
+story_cl = import_module("./story_cl.star")
 lighthouse = import_module("./lighthouse.star")
 lodestar = import_module("./lodestar.star")
 nimbus = import_module("./nimbus.star")
@@ -173,6 +174,31 @@ def launch(
         )
     elif vc_type == constants.VC_TYPE.prysm:
         config = prysm.get_config(
+            el_cl_genesis_data=launcher.el_cl_genesis_data,
+            keymanager_file=keymanager_file,
+            image=image,
+            beacon_http_url=beacon_http_url,
+            cl_context=cl_context,
+            el_context=el_context,
+            full_name=full_name,
+            node_keystore_files=node_keystore_files,
+            vc_min_cpu=vc_min_cpu,
+            vc_max_cpu=vc_max_cpu,
+            vc_min_mem=vc_min_mem,
+            vc_max_mem=vc_max_mem,
+            extra_params=extra_params,
+            extra_env_vars=extra_env_vars,
+            extra_labels=extra_labels,
+            prysm_password_relative_filepath=prysm_password_relative_filepath,
+            prysm_password_artifact_uuid=prysm_password_artifact_uuid,
+            tolerations=tolerations,
+            node_selectors=node_selectors,
+            keymanager_enabled=keymanager_enabled,
+            port_publisher=port_publisher,
+            vc_index=vc_index,
+        )
+    elif vc_type == constants.VC_TYPE.story_cl:
+        config = story_cl.get_config(
             el_cl_genesis_data=launcher.el_cl_genesis_data,
             keymanager_file=keymanager_file,
             image=image,

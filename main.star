@@ -15,6 +15,7 @@ transaction_spammer = import_module(
     "./src/transaction_spammer/transaction_spammer.star"
 )
 aligned = import_module("./src/aligned/aligned.star")
+story = import_module("./src/story/story.star")
 blob_spammer = import_module("./src/blob_spammer/blob_spammer.star")
 goomy_blob = import_module("./src/goomy_blob/goomy_blob.star")
 el_forkmon = import_module("./src/el_forkmon/el_forkmon_launcher.star")
@@ -388,7 +389,7 @@ def run(plan, args={}):
     for index, additional_service in enumerate(
         args_with_right_defaults.additional_services
     ):
-        # TODO: Add aligned
+        # ? TODO: Add aligned
         if additional_service == "aligned":
             plan.print("Launching aligned")
             aligned.aggregator.launch_aggregator(
